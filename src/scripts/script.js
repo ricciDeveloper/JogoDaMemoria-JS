@@ -55,6 +55,53 @@ function checkMatch(){
     openCards = [];
 
     if(document.querySelectorAll(".boxMatch").length === emojis.length){
-        alert("Você venceu!")
+        clearInterval(state.action.countDownTimerId);// Parar o temporizador
+        alert("Você venceu!");
+        window.location.reload();//reiniciar o jogo
     }
 }
+
+const state = {
+    view:{
+        timeLeft: document.querySelector("#time-left")
+    },
+    values: {
+        currentTime: 60
+    },
+    action: {
+        countDownTimerId: null //armazenar o ID do intervalor
+    }
+}
+//função para incializar o tempo restante e atualizar a interface
+function initializeTimer(){
+    state.values.currentTime = 60;//tempo incial em segundos
+    state.view.timeLeft.textContent = state.values.currentTime; //Atualizar o DOM
+}
+
+//função para inciar o temporizador
+function startTimer(){
+    state.action.countDownTimerId = setInterval(countDown,1000);//atualizar a cada segundo
+}
+
+
+
+//função para decrementar o tempo de jogo (contagem regressiva)
+function countDown(){
+    state.values.currentTime--;
+    state.view.timeLeft.textContent = state.values.currentTime;
+
+    //Verificação se o tempo acabou
+    if(state.values.currentTime <= 0){
+        clearInterval(state.action.countDownTimerId);
+        clearInterval(state.action.timerId);
+        alert("GAME OVER! Seu resultado foi: " + state.values.result);
+        //reiniciar o jogo
+        window.location.reload();
+    }
+}
+
+//chamar o início do jogo ao carregar a página
+document.addEventListener("DOMContentLoaded", ()=> {
+    initializeTimer();
+    startTimer();
+})

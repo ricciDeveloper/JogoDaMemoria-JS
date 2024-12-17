@@ -31,6 +31,13 @@ h2{
     letter-spacing: 0.1em;
 
 }
+
+#time-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .reset{
     
     padding: 15px 20px;
@@ -96,3 +103,4 @@ h2{
 .boxMatch::after{
     transform: rotateY(180deg);
 }
+
