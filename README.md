@@ -29,7 +29,8 @@ Bem-vindo ao **Jogo da Memória**, um projeto desenvolvido com **JavaScript**, *
 
 ## 📸 Demonstração
 
-![image](https://github.com/user-attachments/assets/a1b37dad-43f5-404b-be95-cdf0ab5cc6c4)
+![image](https://github.com/user-attachments/assets/6da2aa86-42b1-4886-a12f-30473f9ee70c)
+
 
 
 
