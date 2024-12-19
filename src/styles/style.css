@@ -81,6 +81,7 @@ h2{
     transform: rotateY(180deg);
     transition-duration: 0.25s;
     
+    
 }
 
 .item::after{
@@ -93,6 +94,9 @@ h2{
     transform: rotateY(0deg);
     backface-visibility: hidden;
 
+
+    
+    opacity: 0.5;
 }
 
 .item.boxOpen{
